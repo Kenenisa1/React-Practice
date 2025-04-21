@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import './App.css'
+import MyComponent from './MyComponent'
 
 function App() {
 
@@ -11,7 +11,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>React Practice</h1>
+      <MyComponent/>
     </>
   )
 }
