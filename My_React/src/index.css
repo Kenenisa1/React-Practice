@@ -1,1 +1,75 @@
- 
+ /* MyComponent.css */
+
+.my-component-container {
+  font-family: sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.car-list-heading {
+  color: #333;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.car-list {
+  list-style: none;
+  padding: 0;
+}
+
+.car-list-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.car-name {
+  font-weight: bold;
+  color: #555;
+}
+
+.car-year {
+  color: #777;
+}
+
+.input-group {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.year-input,
+.name-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex-grow: 1;
+}
+
+.name-input::placeholder {
+  color: #999;
+}
+
+.add-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #0056b3;
+}

@@ -1,44 +1,57 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react';
+import './index.css'
 
-function MyComponent (){
-    const [cars, setCars] =useState([]);
-    const [carYear, setCarYear]= useState(new Date().getFullYear());
-    const [carName,setCarName]= useState("");
+function MyComponent() {
+    const [cars, setCars] = useState([]);
+    const [carYear, setCarYear] = useState(new Date().getFullYear());
+    const [carName, setCarName] = useState('');
 
-    function handleAddCar() 
-    {
-        const newCar= {
-            year:carYear, 
-            name: carName
-        }
-        setCars(c=> [...c,newCar])
+    function handleAddCar() {
+        const newCar = {
+            year: carYear,
+            name: carName,
+        };
+        setCars(c => [...c, newCar]);
         setCarYear(new Date().getFullYear());
-        setCarName("");
-    }
-    function handleYear(ind)
-    {
-        setCarYear(ind.target.value)
-    }
-    function handleCarName(ind)
-    {
-        setCarName(ind.target.value)
+        setCarName('');
     }
 
-    return(
-        <div>
-            <h2>List of Cars</h2>
-            <ul>
-                {cars.map((car,index) =>
-                    <li key={index}>
-                        {car.name} {car.year}
+    function handleYear(ind) {
+        setCarYear(ind.target.value);
+    }
+
+    function handleCarName(ind) {
+        setCarName(ind.target.value);
+    }
+
+    return (
+        <div className="my-component-container">
+            <h2 className="car-list-heading">List of Cars</h2>
+            <ul className="car-list">
+                {cars.map((car, index) => (
+                    <li key={index} className="car-list-item">
+                        <span className="car-name">{car.name}</span> <span className="car-year">{car.year}</span>
                     </li>
-                )}
+                ))}
             </ul>
-            <input type="number"  value={carYear} onChange={handleYear}/>
-            <input type="text" value={carName} onChange={handleCarName} placeholder='Enter a car name'/> <br/>  
-            <button onClick={handleAddCar}>Add Car</button>
+            <div className="input-group">
+                <input
+                    type="number"
+                    value={carYear}
+                    onChange={handleYear}
+                    className="year-input"
+                />
+                <input
+                    type="text"
+                    value={carName}
+                    onChange={handleCarName}
+                    placeholder="Enter a car name"
+                    className="name-input"
+                />
+                <button onClick={handleAddCar} className="add-button">Add Car</button>
+            </div>
         </div>
-    )
-} 
+    );
+}
 
-export default MyComponent
+export default MyComponent;
